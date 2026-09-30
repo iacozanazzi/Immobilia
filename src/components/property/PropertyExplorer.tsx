@@ -258,6 +258,7 @@ export function PropertyExplorer({
           <label className="type-meta flex items-center gap-2 text-ardesia">
             <span className="hidden sm:inline">Ordina per</span>
             <select
+              aria-label="Ordina per"
               value={filters.ordine}
               onChange={(e) => update({ ordine: e.target.value })}
               className="cursor-pointer border-0 border-b border-inchiostro/25 bg-transparent py-1 pr-1 text-inchiostro"

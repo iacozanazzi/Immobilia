@@ -209,16 +209,14 @@ export default async function NeighborhoodPage({ params }: Props) {
                 const left = ((min - SCALE_MIN) / (SCALE_MAX - SCALE_MIN)) * 100
                 const width = ((max - min) / (SCALE_MAX - SCALE_MIN)) * 100
                 return (
-                  <div key={label}>
-                    <div className="flex items-baseline justify-between gap-4">
-                      <dt className="type-eyebrow text-ardesia">{label}</dt>
-                      <dd className="type-num font-serif text-2xl">
-                        {formatNumber(min)} – {formatNumber(max)} €/m²
-                      </dd>
-                    </div>
-                    <div aria-hidden className="relative mt-3 h-px bg-inchiostro/15">
+                  <div key={label} className="grid grid-cols-[1fr_auto] items-baseline gap-x-4">
+                    <dt className="type-eyebrow text-ardesia">{label}</dt>
+                    <dd className="type-num font-serif text-2xl">
+                      {formatNumber(min)} – {formatNumber(max)} €/m²
+                    </dd>
+                    <dd aria-hidden className="relative col-span-2 mt-3 h-px bg-inchiostro/15">
                       <span className="absolute -top-[3px] h-[7px] bg-inchiostro" style={{ left: `${left}%`, width: `${width}%` }} />
-                    </div>
+                    </dd>
                   </div>
                 )
               })}

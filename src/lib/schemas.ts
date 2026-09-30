@@ -1,4 +1,6 @@
+import 'server-only'
 import { z } from 'zod'
+import type { LeadKind } from './leads'
 
 const name = z.string().trim().min(2, 'Come possiamo chiamarvi?').max(80)
 const email = z.string().trim().email('Controllate l’indirizzo email').max(120)
@@ -77,17 +79,4 @@ export const leadSchemas = {
     email,
     consent,
   }),
-} as const
-
-export type LeadKind = keyof typeof leadSchemas
-
-export interface LeadState {
-  status: 'idle' | 'success' | 'error'
-  message?: string
-  fieldErrors?: Record<string, string>
-}
-
-export const initialLeadState: LeadState = { status: 'idle' }
-
-/** Campi che possono avere più valori (checkbox con lo stesso name). */
-export const multiValueFields = new Set(['days', 'features', 'zones'])
+} satisfies Record<LeadKind, z.ZodObject>

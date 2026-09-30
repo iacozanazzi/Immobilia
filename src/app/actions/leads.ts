@@ -1,6 +1,7 @@
 'use server'
 
-import { leadSchemas, multiValueFields, type LeadKind, type LeadState } from '@/lib/schemas'
+import { multiValueFields, type LeadKind, type LeadState } from '@/lib/leads'
+import { leadSchemas } from '@/lib/schemas'
 
 const SUBJECTS: Record<LeadKind, string> = {
   visita: 'Richiesta di visita',

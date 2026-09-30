@@ -9,8 +9,8 @@ import { CompareToggle, SaveButton } from './ShortlistButtons'
 export function EnergyBadge({ value, className }: { value: string; className?: string }) {
   return (
     <span className={cn('inline-flex items-baseline gap-1', className)} title={`Classe energetica ${value}`}>
-      <span className="text-current/60">APE</span>
-      <span className="font-medium">{value}</span>
+      <span>APE</span>
+      <span className="font-medium text-inchiostro [.surface-dark_&]:text-argento">{value}</span>
     </span>
   )
 }

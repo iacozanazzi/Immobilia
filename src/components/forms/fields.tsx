@@ -5,7 +5,7 @@ import { useId, type ReactNode } from 'react'
 import { PortaAccesa } from '@/components/brand/Logo'
 import { Icon } from '@/components/ui/Icon'
 import { cn } from '@/lib/cn'
-import type { LeadState } from '@/lib/schemas'
+import type { LeadState } from '@/lib/leads'
 import { useFieldError, useLeadPending } from './lead-context'
 
 /*
@@ -20,7 +20,7 @@ function Label({ htmlFor, children, optional }: { htmlFor: string; children: Rea
   return (
     <label htmlFor={htmlFor} className="type-eyebrow block text-current/75">
       {children}
-      {optional && <span className="ml-2 normal-case tracking-normal text-current/55">(facoltativo)</span>}
+      {optional && <span className="ml-2 normal-case tracking-normal">(facoltativo)</span>}
     </label>
   )
 }

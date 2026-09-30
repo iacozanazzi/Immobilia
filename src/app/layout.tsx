@@ -9,14 +9,14 @@ import { agencyJsonLd, siteUrl } from '@/lib/seo'
 import './globals.css'
 
 const garamond = EB_Garamond({
-  subsets: ['latin', 'latin-ext'],
+  subsets: ['latin'],
   style: ['normal', 'italic'],
   variable: '--font-garamond',
   display: 'swap',
 })
 
 const jost = Jost({
-  subsets: ['latin', 'latin-ext'],
+  subsets: ['latin'],
   variable: '--font-jost',
   display: 'swap',
 })

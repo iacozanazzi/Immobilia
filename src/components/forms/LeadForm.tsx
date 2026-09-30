@@ -3,7 +3,7 @@
 import { startTransition, useActionState, useMemo, useState, type FormEvent, type ReactNode } from 'react'
 import { submitLead } from '@/app/actions/leads'
 import { cn } from '@/lib/cn'
-import { initialLeadState, type LeadKind } from '@/lib/schemas'
+import { initialLeadState, type LeadKind } from '@/lib/leads'
 import { FormStatus, FormSuccess, Honeypot } from './fields'
 import { LeadFormContext } from './lead-context'
 

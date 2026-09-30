@@ -68,6 +68,11 @@ export async function submitLead(kind: LeadKind, _prev: LeadState, formData: For
 
   const raw = formToObject(formData)
   delete raw.website
+  // I campi non inviati (select vuote, checkbox non spuntate) diventano vuoti,
+  // così la validazione mostra i nostri messaggi e non quelli generici.
+  for (const key of Object.keys(schema.shape)) {
+    raw[key] ??= multiValueFields.has(key) ? [] : ''
+  }
   const parsed = schema.safeParse(raw)
   if (!parsed.success) {
     const fieldErrors: Record<string, string> = {}

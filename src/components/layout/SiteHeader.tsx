@@ -91,9 +91,11 @@ export function SiteHeader() {
               <Icon name="bookmark" className="size-5" />
               {saved.length > 0 && <span className="type-meta type-num">{saved.length}</span>}
             </Link>
-            <ButtonLink href="/vendi#valutazione" size="sm" tone={overlay ? 'dark' : 'light'} className="hidden sm:inline-flex">
-              Valuta la tua casa
-            </ButtonLink>
+            <span className="hidden sm:block">
+              <ButtonLink href="/vendi#valutazione" size="sm" tone={overlay ? 'dark' : 'light'}>
+                Valuta la tua casa
+              </ButtonLink>
+            </span>
             <button
               type="button"
               onClick={() => setMenuOpen(true)}

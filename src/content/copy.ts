@@ -39,6 +39,8 @@ export const homeCopy = {
     title: 'Case scelte, una a una.',
     lead: 'Tre immobili che in questo momento ci sembrano speciali. Gli altri li trovate nella selezione completa, raccontati con la stessa cura.',
     cta: 'Tutta la selezione',
+    /** Scelta editoriale: nel CMS diventa un campo ordinabile. */
+    slugs: ['san-marco-piano-nobile-canal-grande', 'cannaregio-casa-corte-misericordia', 'giudecca-loft-sulla-laguna'],
   },
   why: {
     index: 'III',

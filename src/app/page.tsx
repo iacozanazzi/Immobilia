@@ -11,18 +11,17 @@ import { Icon } from '@/components/ui/Icon'
 import { ImageFrame } from '@/components/ui/ImageFrame'
 import { homeCopy as c } from '@/content/copy'
 import { testimonials } from '@/content/testimonials'
-import { countByZone, getFeaturedProperties, getNeighborhoods, getProperties, getProperty, toCardData, zoneName } from '@/lib/content'
+import { countByZone, getNeighborhoods, getProperties, getProperty, getSelection, toCardData, zoneName } from '@/lib/content'
 import { formatArea, formatPrice } from '@/lib/format'
 
 export default async function HomePage() {
-  const [all, featured, neighborhoods, teaser] = await Promise.all([
+  const [all, selection, neighborhoods, teaser] = await Promise.all([
     getProperties(),
-    getFeaturedProperties(4),
+    getSelection(c.selection.slugs),
     getNeighborhoods(),
     getProperty(c.hero.teaserSlug),
   ])
   const counts = countByZone()
-  const selection = featured.filter((p) => p.slug !== teaser?.slug).slice(0, 3)
   const [lead, ...others] = selection
   const sample = teaser ?? all[0]!
 
@@ -30,7 +29,7 @@ export default async function HomePage() {
     <>
       {/* HERO ---------------------------------------------------------- */}
       <section aria-labelledby="hero-title" className="surface-dark relative isolate min-h-[100svh] overflow-hidden bg-notte-950">
-        <ImageFrame image="soggiorno-luce" eager sizes="100vw" className="absolute! inset-0 -z-10" imgClassName="scale-[1.02]" />
+        <ImageFrame image="soggiorno-luce" eager plainFallback sizes="100vw" className="absolute! inset-0 -z-10" imgClassName="scale-[1.02]" />
         <div
           aria-hidden
           className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgb(3_7_15/0.55)_0%,rgb(3_7_15/0.15)_35%,rgb(3_7_15/0.85)_100%)]"
@@ -189,7 +188,7 @@ export default async function HomePage() {
 
       {/* V. PROPRIETARI ------------------------------------------------ */}
       <section aria-labelledby="vendi-title" className="surface-dark relative isolate overflow-hidden bg-notte-950 py-20 text-argento md:py-28 lg:py-32">
-        <ImageFrame image="venezia-rio" sizes="100vw" className="absolute! inset-0 -z-10 opacity-35" />
+        <ImageFrame image="venezia-rio" plainFallback sizes="100vw" className="absolute! inset-0 -z-10 opacity-35" />
         <div aria-hidden className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgb(3_7_15/0.95)_0%,rgb(3_7_15/0.7)_60%,rgb(3_7_15/0.5)_100%)]" />
         <div className="wrap grid gap-16 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-7">

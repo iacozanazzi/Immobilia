@@ -270,3 +270,13 @@
     animation: fade 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.1s both;
   }
 }
+
+/* La barra del confronto sale sopra la barra fissa della scheda, su mobile. */
+@media (width < 64rem) {
+  body:has([data-bottom-bar]) .compare-tray {
+    bottom: calc(5.5rem + env(safe-area-inset-bottom));
+  }
+  body:has([data-bottom-bar]) footer {
+    padding-bottom: 5rem;
+  }
+}

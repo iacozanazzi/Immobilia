@@ -58,7 +58,7 @@ export const properties: Property[] = [
       {
         kind: 'lavori',
         title: 'Facciata',
-        text: 'Il condominio ha deliberato il restauro della facciata per il 2027. Quota stimata per l’appartamento: 14.000 €, già considerata nel prezzo.',
+        text: 'Il condominio ha deliberato il restauro della facciata per il 2027. Quota stimata per l’appartamento: 14.000 euro, già considerata nel prezzo.',
       },
       {
         kind: 'vincoli',
@@ -240,7 +240,7 @@ export const properties: Property[] = [
       {
         kind: 'costi',
         title: 'Spese condominiali',
-        text: '650 € al mese: comprendono portineria, ascensore, pulizie e manutenzione della riva e della cavana.',
+        text: '650 euro al mese: comprendono portineria, ascensore, pulizie e manutenzione della riva e della cavana.',
       },
       {
         kind: 'impianti',
@@ -403,7 +403,7 @@ export const properties: Property[] = [
       {
         kind: 'costi',
         title: 'Spese condominiali',
-        text: '210 € al mese: comprendono ascensore, pulizie e manutenzione del pontile comune.',
+        text: '210 euro al mese: comprendono ascensore, pulizie e manutenzione del pontile comune.',
       },
     ],
     vaporetto: { stop: 'Palanca', lines: ['2', '4.1', '4.2'], minutes: 4 },
@@ -477,7 +477,7 @@ export const properties: Property[] = [
       {
         kind: 'lavori',
         title: 'Impianti e bagni',
-        text: 'Da aggiornare. Preventivo indicativo del nostro tecnico: 180.000–220.000 €, a seconda delle finiture.',
+        text: 'Da aggiornare. Preventivo indicativo del nostro tecnico: 180.000–220.000 euro, a seconda delle finiture.',
       },
       {
         kind: 'acqua',
@@ -487,7 +487,7 @@ export const properties: Property[] = [
       {
         kind: 'costi',
         title: 'Giardino',
-        text: 'Manutenzione stimata intorno ai 3.000 € l’anno.',
+        text: 'Manutenzione stimata intorno ai 3.000 euro l’anno.',
       },
     ],
     vaporetto: { stop: 'Lido S.M. Elisabetta', lines: ['1', '5.1', '5.2', '6'], minutes: 12 },
@@ -809,7 +809,7 @@ export const properties: Property[] = [
       {
         kind: 'lavori',
         title: 'Ristrutturazione',
-        text: 'Completa. Stima indicativa: 1.100–1.400 €/m² a seconda delle finiture. Possiamo presentarvi due imprese con cui lavoriamo da anni.',
+        text: 'Completa. Stima indicativa: 1.100–1.400 euro al m² a seconda delle finiture. Possiamo presentarvi due imprese con cui lavoriamo da anni.',
       },
       {
         kind: 'accesso',
@@ -892,7 +892,7 @@ export const properties: Property[] = [
       {
         kind: 'costi',
         title: 'Spese condominiali',
-        text: '160 € al mese, con il riscaldamento centralizzato incluso.',
+        text: '160 euro al mese, con il riscaldamento centralizzato incluso.',
       },
       {
         kind: 'acqua',

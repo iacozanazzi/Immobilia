@@ -23,6 +23,11 @@ export async function getFeaturedProperties(limit = 3): Promise<Property[]> {
   return properties.filter((p) => p.featured).slice(0, limit)
 }
 
+/** Selezione editoriale, nell'ordine scelto. */
+export async function getSelection(slugs: readonly string[]): Promise<Property[]> {
+  return slugs.map((slug) => properties.find((p) => p.slug === slug)).filter((p): p is Property => Boolean(p))
+}
+
 export async function getPropertiesByZone(zone: ZoneSlug): Promise<Property[]> {
   return properties.filter((p) => p.zone === zone).sort(byRelevance)
 }
@@ -107,5 +112,27 @@ export function toCardData(p: Property): PropertyCardData {
     hook: p.hook,
     images: p.images.slice(0, 2),
     publishedAt: p.publishedAt,
+  }
+}
+
+/** Dati per la tabella di confronto. */
+export interface PropertyCompareData extends PropertyCardData {
+  bedroomsLabel: string
+  condition: Property['condition']
+  condoFees: number
+  outdoor?: number
+  vaporetto: Property['vaporetto']
+  listedBuilding: boolean
+}
+
+export function toCompareData(p: Property): PropertyCompareData {
+  return {
+    ...toCardData(p),
+    bedroomsLabel: `${p.bedrooms} camere · ${p.bathrooms} bagni`,
+    condition: p.condition,
+    condoFees: p.condoFees,
+    outdoor: p.area.outdoor,
+    vaporetto: p.vaporetto,
+    listedBuilding: p.listedBuilding,
   }
 }

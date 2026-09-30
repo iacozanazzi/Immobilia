@@ -99,3 +99,114 @@ export const homeCopy = {
     },
   },
 }
+
+export const sellCopy = {
+  hero: {
+    eyebrow: 'Vendere casa a Venezia',
+    title: 'Vendere casa a Venezia richiede più di un annuncio.',
+    lead: 'Una casa veneziana va capita prima di essere raccontata: la luce, l’acqua, i vincoli, la sua storia. Per questo accettiamo pochi incarichi e li seguiamo uno per uno, dalla valutazione al rogito.',
+    primary: 'Richiedi una valutazione',
+    secondary: 'Parlate con Francesco',
+  },
+  /** Impegni di servizio: vanno confermati con l'agenzia prima del lancio. */
+  commitments: [
+    ['20', 'incarichi al massimo, seguiti insieme'],
+    ['7', 'giorni per la valutazione scritta'],
+    ['15', 'giorni tra un report e l’altro'],
+  ],
+  benefits: {
+    eyebrow: 'Cosa facciamo per la vostra casa',
+    title: 'Sei cose che un portale non fa.',
+    items: [
+      {
+        title: 'Una valutazione motivata',
+        text: 'Partiamo dalle compravendite reali della zona e dalle quotazioni OMI, poi correggiamo con ciò che i dati non vedono: piano, luce, acqua, vincoli. Ricevete una valutazione scritta, con le ragioni.',
+      },
+      {
+        title: 'Fotografia professionale',
+        text: 'Uno shooting con luce naturale, nell’ora giusta per la vostra casa. Anche l’altana, la vista, la calle sotto casa.',
+      },
+      {
+        title: 'La planimetria, ridisegnata',
+        text: 'Rilievo e ridisegno della pianta, chiara e leggibile. È la seconda cosa che un acquirente guarda, subito dopo le foto.',
+      },
+      {
+        title: 'Un racconto, non un elenco',
+        text: 'Scriviamo la scheda come un articolo: cosa rende unica la vostra casa e, con onestà, cosa c’è da sapere. Le trattative che non saltano nascono qui.',
+      },
+      {
+        title: 'Visite solo con chi ha senso',
+        text: 'Prima di ogni visita parliamo con l’acquirente: budget, tempi, esigenze. Aprite la porta solo a persone davvero interessate.',
+      },
+      {
+        title: 'Report e pratiche fino al rogito',
+        text: 'Un resoconto dopo ogni visita e ogni quindici giorni. Con il nostro tecnico seguiamo conformità, catasto, APE e Soprintendenza.',
+      },
+    ],
+  },
+  process: {
+    eyebrow: 'Come lavoriamo',
+    title: 'Cinque passi, un solo referente.',
+    steps: [
+      { title: 'Primo incontro', text: 'Ci raccontate la casa e i vostri tempi. In agenzia, da voi o in videochiamata.', time: '30 minuti' },
+      { title: 'Sopralluogo e valutazione', text: 'Visitiamo e misuriamo la casa. Entro una settimana ricevete la valutazione scritta.', time: '1 settimana' },
+      { title: 'Preparazione', text: 'Verifica dei documenti, piccoli consigli di presentazione, shooting e planimetria.', time: '2 settimane' },
+      { title: 'Presentazione e visite', text: 'Prima agli iscritti all’anteprima, poi online. Visite con acquirenti selezionati e report dopo ognuna.', time: 'Secondo il mercato' },
+      { title: 'Trattativa e rogito', text: 'Vi affianchiamo nella proposta, nel compromesso e fino al rogito dal notaio.', time: 'Fino alla fine' },
+    ],
+  },
+  compare: {
+    eyebrow: 'La differenza',
+    title: 'Lo stesso immobile, raccontato in due modi.',
+    standard: {
+      label: 'Annuncio tipico',
+      items: [
+        'Dodici foto scattate con il telefono',
+        'Planimetria catastale scansionata',
+        '“Luminoso, ben tenuto, zona servita”',
+        'Nessuna parola su acqua alta o lavori',
+        'Visite con chiunque chiami',
+        'Aggiornamenti quando capita',
+      ],
+    },
+    immobilia: {
+      label: 'Scheda IMMOBILIA',
+      items: [
+        'Shooting professionale con luce naturale',
+        'Planimetria ridisegnata e leggibile',
+        'Un testo scritto per quella casa',
+        '“Cose da sapere” dichiarate in anticipo',
+        'Acquirenti selezionati prima della visita',
+        'Un report dopo ogni visita',
+      ],
+    },
+  },
+  valuation: {
+    eyebrow: 'Valutazione',
+    title: 'Quanto vale la vostra casa?',
+    lead: 'Tre domande sulla casa, poi i vostri contatti. Vi richiamiamo per fissare il sopralluogo: la valutazione scritta arriva dopo averla vista, non prima.',
+    promise: ['Gratuita e senza impegno', 'Scritta e motivata, con i dati', 'Riservata: i vostri dati restano a noi'],
+  },
+  faq: [
+    {
+      q: 'Quanto costa?',
+      a: 'La valutazione è gratuita. La provvigione si concorda per iscritto al momento dell’incarico ed è dovuta solo a vendita conclusa. Fotografie e planimetria sono incluse.',
+    },
+    {
+      q: 'Serve l’incarico in esclusiva?',
+      a: 'Sì, per un periodo definito, di solito sei mesi. È ciò che ci permette di investire nella presentazione e di presentare la casa al mercato con un solo prezzo e un solo racconto.',
+    },
+    {
+      q: 'In quanto tempo si vende?',
+      a: 'Dipende da zona, prezzo e stagione. Nella valutazione vi diamo una stima motivata, basata sulle vendite recenti di case simili alla vostra.',
+    },
+    {
+      q: 'Quali documenti servono?',
+      a: 'Atto di provenienza, planimetria catastale, APE ed eventuali pratiche edilizie. Se manca qualcosa, il nostro tecnico se ne occupa prima di andare online.',
+    },
+    {
+      q: 'Vivo fuori Venezia: posso vendere a distanza?',
+      a: 'Sì. Custodiamo le chiavi, facciamo le visite e vi aggiorniamo in videochiamata. Siete presenti al rogito, o nemmeno lì, con una procura.',
+    },
+  ],
+}

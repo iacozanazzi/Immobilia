@@ -44,15 +44,17 @@ const LETTERS: Array<{ d: string; width: number }> = [
 ]
 const wordWidth = (gap: number) => LETTERS.reduce((sum, l) => sum + l.width, 0) + gap * (LETTERS.length - 1)
 
+/** Posizione orizzontale di ogni lettera, a parità di spaziatura. */
+const letterOffsets = (gap: number) =>
+  LETTERS.map((_, i) => LETTERS.slice(0, i).reduce((sum, prev) => sum + prev.width + gap, 0))
+
 function Wordmark({ color, strokeWidth, gap }: { color: string; strokeWidth: number; gap: number }) {
-  let x = 0
+  const offsets = letterOffsets(gap)
   return (
     <g fill="none" stroke={color} strokeWidth={strokeWidth} strokeLinejoin="miter" strokeMiterlimit={2.5}>
-      {LETTERS.map((l, i) => {
-        const path = <path key={i} d={l.d} transform={`translate(${x} 0)`} />
-        x += l.width + gap
-        return path
-      })}
+      {LETTERS.map((l, i) => (
+        <path key={i} d={l.d} transform={`translate(${offsets[i]} 0)`} />
+      ))}
     </g>
   )
 }
@@ -97,10 +99,12 @@ export function Logo({
   title?: string
 }) {
   const c = TONES[tone]
+  // Con title vuoto il logo è decorativo (es. accanto a un testo che lo nomina già).
+  const a11y = title ? { role: 'img' as const, 'aria-label': title } : { 'aria-hidden': true as const }
 
   if (variant === 'mark') {
     return (
-      <svg viewBox="-48 -12 603 350" className={className} role="img" aria-label={title}>
+      <svg viewBox="-48 -12 603 350" className={className} {...a11y}>
         <Mark line={c.line} door={c.door} strokeWidth={9} animate={animate} ground />
       </svg>
     )
@@ -112,7 +116,7 @@ export function Logo({
     const gap = 78
     const wordX = 507 * s + 92
     return (
-      <svg viewBox={`-40 -10 ${wordX + wordWidth(gap) + 92} 290`} className={className} role="img" aria-label={title}>
+      <svg viewBox={`-40 -10 ${wordX + wordWidth(gap) + 92} 290`} className={className} {...a11y}>
         <g transform={`scale(${s})`}>
           <Mark line={c.line} door={c.door} strokeWidth={11} animate={animate} ground />
         </g>
@@ -130,7 +134,7 @@ export function Logo({
   const markRight = cx + (507 * markScale) / 2
   const base = 428
   return (
-    <svg viewBox="40 24 1467 668" className={className} role="img" aria-label={title}>
+    <svg viewBox="40 24 1467 668" className={className} {...a11y}>
       <g transform={`translate(${markLeft} ${base - 325 * markScale}) scale(${markScale})`}>
         <Mark line={c.line} door={c.door} strokeWidth={5.5} animate={animate} />
       </g>

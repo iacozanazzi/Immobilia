@@ -19,6 +19,8 @@ export function LeadForm(props: {
   hidden?: Record<string, string>
   /** Validazione extra lato client prima dell'invio (es. passi del wizard). */
   validate?: (data: FormData) => Record<string, string>
+  /** Errori gestiti dal chiamante (es. validazione di un singolo passo). */
+  errors?: Record<string, string>
   success?: ReactNode
 }) {
   const [attempt, setAttempt] = useState(0)
@@ -31,6 +33,7 @@ function Inner({
   className,
   hidden,
   validate,
+  errors: externalErrors,
   success,
   onReset,
 }: Parameters<typeof LeadForm>[0] & { onReset: () => void }) {
@@ -38,7 +41,7 @@ function Inner({
   const [state, formAction, pending] = useActionState(action, initialLeadState)
   const [clientErrors, setClientErrors] = useState<Record<string, string>>({})
 
-  const errors = { ...state.fieldErrors, ...clientErrors }
+  const errors = { ...state.fieldErrors, ...clientErrors, ...externalErrors }
 
   if (state.status === 'success') {
     return success ?? <FormSuccess message={state.message} onReset={onReset} />

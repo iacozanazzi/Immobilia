@@ -280,3 +280,25 @@
     padding-bottom: 5rem;
   }
 }
+
+/* Linea del processo: si "accende" mentre la sezione entra nello schermo. */
+.process-line {
+  transform: scale(1);
+}
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .process-line {
+      animation: process-light linear both;
+      animation-timeline: view();
+      animation-range: entry 20% cover 55%;
+    }
+  }
+}
+@keyframes process-light {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}

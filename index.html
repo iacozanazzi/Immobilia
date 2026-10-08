@@ -1,0 +1,361 @@
+<!doctype html>
+<!--
+  IMMOBILIA di Francesca Cavagnaro — pagina unica.
+
+  DATI DA COMPLETARE: cercate "[DA INSERIRE" in questo file. Sono:
+    - telefono (3 punti: pulsante "Chiama", elenco contatti, dati per Google in fondo alla <head>)
+    - numero WhatsApp (2 punti, formato internazionale senza + e spazi, es. 393331234567)
+    - email (2 punti + dati per Google)
+    - orari dell'ufficio
+    - link alle pagine dell'agenzia su Idealista e Immobiliare.it
+    - P.IVA e numero REA (obbligatori per legge nel sito di un'attività)
+-->
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IMMOBILIA di Francesca Cavagnaro · Agenzia immobiliare a Venezia</title>
+  <meta name="description" content="Agenzia immobiliare a Venezia, in Campo San Tomà. Compravendite e affitti in tutta la città. Contatti, orari e come raggiungerci.">
+  <meta name="theme-color" content="#061423">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:title" content="IMMOBILIA di Francesca Cavagnaro">
+  <meta property="og:description" content="Agenzia immobiliare a Venezia, in Campo San Tomà. Compravendite e affitti.">
+
+  <!-- Dati per Google (scheda dell'attività e ricerche locali) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "IMMOBILIA di Francesca Cavagnaro",
+    "founder": { "@type": "Person", "name": "Francesca Cavagnaro" },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Campo San Tomà 2916",
+      "postalCode": "30125",
+      "addressLocality": "Venezia",
+      "addressRegion": "VE",
+      "addressCountry": "IT"
+    },
+    "areaServed": "Venezia",
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=Campo+San+Tom%C3%A0+2916%2C+30125+Venezia"
+  }
+  </script>
+  <!-- [DA INSERIRE] quando avete i dati, aggiungete al blocco qui sopra:
+       "telephone": "+39 ...", "email": "...", "url": "https://...",
+       "openingHours": ["Mo-Fr 09:30-13:00", "Mo-Fr 15:00-19:00"] -->
+
+  <style>
+    :root {
+      --notte-950: #02000b;
+      --notte-900: #061423;
+      --notte-800: #0b1e30;
+      --petrolio: #001623;
+      --peltro-300: #b4bbc2;
+      --peltro-200: #d3d8dc;
+      --argento: #f0f3fa;
+      --luce: #c9ae85;
+      --bronzo: #7a5c34;
+      --calce: #faf8f4;
+      --calce-2: #f3efe8;
+      --inchiostro: #0b1622;
+      --ardesia: #4a5561;
+      --linea: rgb(11 22 34 / 0.14);
+      --serif: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+      --sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --wrap: min(68rem, 100% - 2.5rem);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--calce);
+      color: var(--inchiostro);
+      font: 400 1.0625rem/1.65 var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    :focus-visible { outline: 2px solid var(--bronzo); outline-offset: 3px; }
+    .scuro :focus-visible { outline-color: var(--luce); }
+    .wrap { width: var(--wrap); margin-inline: auto; }
+
+    .occhiello {
+      margin: 0;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ardesia);
+    }
+    h2 {
+      margin: 0.6rem 0 0;
+      font: 400 clamp(1.9rem, 1.4rem + 2vw, 2.75rem)/1.1 var(--serif);
+      letter-spacing: -0.01em;
+    }
+
+    /* Apertura */
+    .apertura {
+      background: radial-gradient(ellipse 80% 70% at 50% 40%, var(--petrolio) 0%, var(--notte-950) 100%);
+      color: var(--argento);
+      padding: clamp(3.5rem, 10vh, 7rem) 0 clamp(3rem, 8vh, 5.5rem);
+      text-align: center;
+    }
+    .apertura h1 { margin: 0; }
+    .logo { display: block; width: min(34rem, 100%); height: auto; margin-inline: auto; }
+    .presentazione {
+      max-width: 36rem;
+      margin: clamp(2rem, 5vh, 3rem) auto 0;
+      font: 400 clamp(1.2rem, 1.05rem + 0.6vw, 1.45rem)/1.5 var(--serif);
+      color: var(--peltro-200);
+    }
+    .azioni {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 2.25rem;
+    }
+    .pulsante {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      min-height: 3rem;
+      padding: 0 1.5rem;
+      border: 1px solid currentColor;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+    .pulsante svg { width: 1.1rem; height: 1.1rem; flex: none; }
+    .pulsante.pieno { background: var(--calce); color: var(--notte-900); border-color: var(--calce); }
+    .pulsante.pieno:hover { background: #fff; }
+    .pulsante.pieno .porta { width: 0.42em; height: 0.8em; background: var(--bronzo); }
+    .scuro .pulsante:not(.pieno) { color: var(--argento); border-color: rgb(240 243 250 / 0.35); }
+    .scuro .pulsante:not(.pieno):hover { border-color: var(--argento); }
+    .chiaro .pulsante { color: var(--inchiostro); border-color: rgb(11 22 34 / 0.3); }
+    .chiaro .pulsante:hover { border-color: var(--inchiostro); }
+
+    /* Sezioni chiare */
+    section.chiaro { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+    section.chiaro + section.chiaro { border-top: 1px solid var(--linea); }
+    .alterna { background: var(--calce-2); }
+
+    .griglia { display: grid; gap: 2.5rem; margin-top: 2.5rem; }
+    .griglia > * { min-width: 0; }
+    @media (min-width: 52rem) {
+      .griglia { grid-template-columns: 1fr 1fr; gap: 4rem; }
+    }
+
+    dl { margin: 0; }
+    .elenco > div {
+      display: grid;
+      grid-template-columns: 7.5rem 1fr;
+      gap: 1rem;
+      padding: 0.9rem 0;
+      border-top: 1px solid var(--linea);
+    }
+    .elenco > div:last-child { border-bottom: 1px solid var(--linea); }
+    .elenco dt { color: var(--ardesia); }
+    .elenco dd { margin: 0; }
+    .elenco a { text-underline-offset: 3px; text-decoration-color: rgb(11 22 34 / 0.35); }
+    .elenco a:hover { text-decoration-color: currentColor; }
+    .nota { margin: 1rem 0 0; color: var(--ardesia); font-size: 0.95rem; }
+    .titolo-colonna { margin: 0 0 0.5rem; font: 400 1.35rem/1.3 var(--serif); }
+
+    .portali { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+    .portali .pulsante { min-width: 14rem; }
+
+    /* Mappa */
+    .indirizzo { margin: 0; font: 400 1.5rem/1.35 var(--serif); font-style: normal; }
+    .percorso { margin: 1.75rem 0 0; padding: 0; list-style: none; }
+    .percorso li { padding: 0.9rem 0; border-top: 1px solid var(--linea); }
+    .percorso strong { display: block; font-weight: 600; }
+    .percorso span { color: var(--ardesia); }
+    .mappa {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      min-height: 18rem;
+      background: radial-gradient(ellipse at center, var(--notte-800) 0%, var(--notte-950) 100%);
+      color: var(--argento);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .mappa iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .mappa p { margin: 0.75rem 0 1.25rem; max-width: 22rem; color: var(--peltro-300); font-size: 0.9rem; }
+    .mappa svg.pin { width: 2.25rem; height: 2.25rem; }
+    .mappa button { font: inherit; font-size: 0.8rem; font-weight: 600; background: transparent; cursor: pointer; }
+    .apri-mappa { display: inline-block; margin-top: 1rem; font-weight: 600; text-underline-offset: 3px; }
+
+    /* Piè di pagina */
+    footer {
+      background: var(--notte-950);
+      color: var(--peltro-300);
+      padding: 2.5rem 0;
+      font-size: 0.9rem;
+    }
+    footer p { margin: 0.35rem 0; }
+    footer a { color: var(--argento); text-underline-offset: 3px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="apertura scuro">
+    <div class="wrap">
+      <h1><img class="logo" src="logo.svg" alt="IMMOBILIA di Francesca Cavagnaro" width="1467" height="668"></h1>
+      <p class="presentazione">
+        Agenzia immobiliare a Venezia. Compravendite e affitti in tutta la città e, quando serve, anche fuori.
+        Ogni casa seguita di persona, dalla prima visita al rogito.
+      </p>
+      <div class="azioni">
+        <!-- [DA INSERIRE] telefono nel formato tel:+39041... -->
+        <a class="pulsante pieno" href="tel:+39000000000"><span class="porta" aria-hidden="true"></span>Chiama</a>
+        <!-- [DA INSERIRE] numero WhatsApp, es. https://wa.me/393331234567 -->
+        <a class="pulsante" href="https://wa.me/390000000000">WhatsApp</a>
+        <!-- [DA INSERIRE] email -->
+        <a class="pulsante" href="mailto:info@esempio.it">Scrivi una email</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="chiaro" aria-labelledby="contatti-titolo">
+      <div class="wrap">
+        <p class="occhiello">Contatti</p>
+        <h2 id="contatti-titolo">Parliamo della vostra casa</h2>
+        <div class="griglia">
+          <div>
+            <h3 class="titolo-colonna">Come raggiungerci</h3>
+            <dl class="elenco">
+              <div>
+                <dt>Telefono</dt>
+                <dd><a href="tel:+39000000000">[DA INSERIRE: telefono]</a></dd>
+              </div>
+              <div>
+                <dt>WhatsApp</dt>
+                <dd><a href="https://wa.me/390000000000">[DA INSERIRE: numero WhatsApp]</a></dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd><a href="mailto:info@esempio.it">[DA INSERIRE: email]</a></dd>
+              </div>
+              <div>
+                <dt>Ufficio</dt>
+                <dd>Campo San Tomà 2916<br>30125 Venezia</dd>
+              </div>
+            </dl>
+          </div>
+          <div>
+            <h3 class="titolo-colonna">Orari dell’ufficio</h3>
+            <dl class="elenco">
+              <div>
+                <dt>Lun – Ven</dt>
+                <dd>[DA INSERIRE: orari]</dd>
+              </div>
+              <div>
+                <dt>Sabato</dt>
+                <dd>[DA INSERIRE: orari o “su appuntamento”]</dd>
+              </div>
+              <div>
+                <dt>Domenica</dt>
+                <dd>Chiuso</dd>
+              </div>
+            </dl>
+            <p class="nota">Fuori orario riceviamo su appuntamento: chiamateci o scriveteci su WhatsApp.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chiaro alterna" aria-labelledby="annunci-titolo">
+      <div class="wrap">
+        <p class="occhiello">Annunci</p>
+        <h2 id="annunci-titolo">Le nostre case in vendita e in affitto</h2>
+        <p class="nota">Pubblichiamo tutti i nostri immobili sui principali portali, con foto, planimetrie e prezzi aggiornati.</p>
+        <div class="portali">
+          <!-- [DA INSERIRE] link alla pagina dell'agenzia su Idealista -->
+          <a class="pulsante" href="https://www.idealista.it/" target="_blank" rel="noopener">Vedi su Idealista ↗</a>
+          <!-- [DA INSERIRE] link alla pagina dell'agenzia su Immobiliare.it -->
+          <a class="pulsante" href="https://www.immobiliare.it/" target="_blank" rel="noopener">Vedi su Immobiliare.it ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="chiaro" aria-labelledby="dove-titolo">
+      <div class="wrap">
+        <p class="occhiello">Dove siamo</p>
+        <h2 id="dove-titolo">In Campo San Tomà, a due passi dai Frari</h2>
+        <div class="griglia">
+          <div>
+            <address class="indirizzo">IMMOBILIA<br>Campo San Tomà 2916<br>30125 Venezia</address>
+            <ul class="percorso">
+              <li>
+                <strong>In vaporetto</strong>
+                <span>Linea 1, fermata San Tomà: poi pochi minuti a piedi.</span>
+              </li>
+              <li>
+                <strong>A piedi da Piazzale Roma o dalla stazione</strong>
+                <span>Circa 15 minuti: seguite le indicazioni per i Frari, Campo San Tomà è subito dopo.</span>
+              </li>
+              <li>
+                <strong>Da San Marco</strong>
+                <span>Attraversate il Canal Grande al ponte dell’Accademia o di Rialto, poi seguite le indicazioni per San Tomà.</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="mappa scuro" id="mappa" tabindex="-1"
+                 data-src="https://www.google.com/maps?q=Campo+San+Tom%C3%A0+2916%2C+30125+Venezia&amp;z=17&amp;output=embed">
+              <div>
+                <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+                  <path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21z"/>
+                  <rect x="11" y="7" width="2" height="5" fill="#c9ae85" stroke="none"/>
+                </svg>
+                <p>La mappa viene caricata da Google solo se la richiedete.</p>
+                <button type="button" class="pulsante" id="mostra-mappa">Mostra la mappa</button>
+              </div>
+            </div>
+            <a class="apri-mappa" href="https://www.google.com/maps/search/?api=1&amp;query=Campo+San+Tom%C3%A0+2916%2C+30125+Venezia" target="_blank" rel="noopener">Apri in Google Maps ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="scuro">
+    <div class="wrap">
+      <p>© 2026 IMMOBILIA di Francesca Cavagnaro · Campo San Tomà 2916, 30125 Venezia</p>
+      <p>P.IVA [DA INSERIRE] · REA VE-[DA INSERIRE]</p>
+      <p>Questo sito non usa cookie né strumenti di tracciamento. La mappa di Google si carica solo se la richiedete:
+        in quel caso vale l’<a href="https://policies.google.com/privacy?hl=it" target="_blank" rel="noopener">informativa privacy di Google</a>.</p>
+    </div>
+  </footer>
+
+  <script>
+    // La mappa di Google si carica solo al clic: prima, nessun dato va a Google.
+    document.getElementById('mostra-mappa').addEventListener('click', function () {
+      var box = document.getElementById('mappa');
+      var iframe = document.createElement('iframe');
+      iframe.src = box.getAttribute('data-src');
+      iframe.title = 'Mappa: IMMOBILIA, Campo San Tomà 2916, Venezia';
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.referrerPolicy = 'no-referrer-when-downgrade';
+      box.replaceChildren(iframe);
+      box.focus();
+    });
+  </script>
+</body>
+</html>

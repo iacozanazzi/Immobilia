@@ -1,64 +1,36 @@
-# IMMOBILIA — sito web (concept)
+# IMMOBILIA di Francesca Cavagnaro
 
-Sito della boutique immobiliare **IMMOBILIA di Francesco Casagrande**, a Venezia.
-Concept funzionante: tutte le pagine, i filtri, i preferiti, il confronto e i form funzionano. Immobili, prezzi e testimonianze sono esempi.
+Pagina unica dell'agenzia: logo, contatti, orari, link agli annunci e mappa della sede in Campo San Tomà.
 
-- **Documento di progetto** (brand, concept, direzione visiva, sitemap, wireframe, UX, copy, componenti): [`docs/concept.md`](docs/concept.md)
-- **Logo di riferimento:** [`docs/brand/logo-reference.jpg`](docs/brand/logo-reference.jpg) · ricostruzione SVG in [`public/brand/`](public/brand)
+## Aprirla
 
-## Avvio
+Doppio clic su `index.html`: si apre nel browser, non serve installare nulla.
 
-Serve Node.js 20.9 o successivo.
+## File
 
-```bash
-npm install
-npm run dev        # http://localhost:3000
-npm run build      # build di produzione, tutte le pagine statiche
-npm start
-npm run lint
-npm run typecheck
-```
-
-Variabili d'ambiente, tutte facoltative (vedi `.env.example`):
-
-| Variabile | A cosa serve |
+| File | Cosa contiene |
 |---|---|
-| `NEXT_PUBLIC_SITE_URL` | URL pubblico, usato per canonical, sitemap e Open Graph |
-| `RESEND_API_KEY`, `LEADS_TO_EMAIL`, `LEADS_FROM_EMAIL` | Invio delle richieste via email con Resend. Senza queste variabili le richieste vengono solo registrate nei log, senza dati personali |
+| `index.html` | La pagina: testi, stile e il piccolo script che carica la mappa al clic |
+| `logo.svg` | Logo ricostruito in vettoriale, versione per fondo scuro |
+| `favicon.svg` | Icona della scheda del browser |
+| `docs/brand/logo-reference.jpg` | Il logo originale da cui è stata fatta la ricostruzione |
 
-## Struttura
+## Completare i dati
 
-```
-src/
-  app/                  pagine (App Router) e Server Action dei form (actions/leads.ts)
-  components/
-    brand/              logo e segno della porta
-    layout/             header, menu mobile, footer, sezioni, cornice
-    property/           card, filtri, galleria, planimetria, box di contatto, confronto
-    forms/              form con validazione lato server
-    neighborhood/       card e matrice delle zone
-    editorial/          processo, FAQ, testimonianze, pagine legali
-    ui/                 bottoni, icone, immagini
-  content/              dati: immobili, zone, agenzia, testi, foto
-  lib/                  accesso ai contenuti, SEO, formattazione, preferiti, schemi
-```
+Aprite `index.html` con un editor di testo e cercate `[DA INSERIRE`:
+- telefono;
+- WhatsApp;
+- email;
+- orari;
+- link alle pagine dell'agenzia su Idealista e Immobiliare.it;
+- P.IVA e REA.
 
-## Come modificare
+L'elenco completo è anche nel commento in cima al file.
 
-- **Immobili e zone:** `src/content/properties.ts` e `src/content/neighborhoods.ts`, tipizzati in `src/content/types.ts`. Le planimetrie si descrivono come stanze rettangolari, in metri.
-- **Testi delle pagine:** `src/content/copy.ts`. Dati dell'agenzia (contatti, orari, dati legali): `src/content/agency.ts`.
-- **Foto:** si sostituiscono tutte in `src/content/media.ts`. Il loader in `src/lib/image-loader.ts` usa il ridimensionamento via URL di Unsplash; con un CMS va puntato al suo CDN immagini.
-- **Colori e tipografia:** token in `src/app/globals.css`, font in `src/app/layout.tsx`.
-- **Logo:** `src/components/brand/Logo.tsx` (ricostruzione provvisoria). Quando arriva il vettoriale originale basta sostituire i tracciati; le varianti statiche sono in `public/brand/`.
-- **CMS:** le pagine leggono i contenuti solo tramite `src/lib/content.ts`. Per passare a un CMS headless (consigliato: Sanity) si riscrivono quelle funzioni.
+## Privacy
 
-## Prima di andare online
+La pagina non usa cookie né strumenti di tracciamento, quindi non serve il banner dei cookie. La mappa di Google non si carica da sola: compare solo quando il visitatore preme "Mostra la mappa". Il link "Apri in Google Maps" funziona sempre.
 
-L'elenco completo è in [`docs/concept.md`](docs/concept.md#prima-del-lancio-cosa-sostituire-o-decidere). In breve:
-- logo vettoriale;
-- foto e planimetrie reali;
-- dati reali degli immobili;
-- prezzi di zona validati con OMI;
-- testimonianze vere;
-- dati legali, privacy e cookie;
-- impegni di servizio confermati.
+## Metterla online
+
+Basta un qualsiasi hosting di siti statici: si caricano i tre file (`index.html`, `logo.svg`, `favicon.svg`) nella cartella principale del dominio.

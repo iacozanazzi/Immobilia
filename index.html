@@ -1,21 +1,15 @@
 <!doctype html>
 <!--
   IMMOBILIA di Francesca Cavagnaro — pagina unica.
-
-  DATI DA COMPLETARE: cercate "[DA INSERIRE" in questo file. Sono:
-    - telefono (3 punti: pulsante "Chiama", elenco contatti, dati per Google in fondo alla <head>)
-    - numero WhatsApp (2 punti, formato internazionale senza + e spazi, es. 393331234567)
-    - email (2 punti + dati per Google)
-    - orari dell'ufficio
-    - link alle pagine dell'agenzia su Idealista e Immobiliare.it
-    - P.IVA e numero REA (obbligatori per legge nel sito di un'attività)
+  Telefono, email e link compaiono più volte: se cambiano, usate "Trova e sostituisci"
+  (compresi i dati per Google nel blocco <script type="application/ld+json">).
 -->
 <html lang="it">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>IMMOBILIA di Francesca Cavagnaro · Agenzia immobiliare a Venezia</title>
-  <meta name="description" content="Agenzia immobiliare a Venezia, in Campo San Tomà. Compravendite e affitti in tutta la città. Contatti, orari e come raggiungerci.">
+  <meta name="description" content="Agenzia immobiliare a Venezia, in Campo San Tomà. Compravendite e affitti in tutta la città. Riceviamo su appuntamento: contatti e come raggiungerci.">
   <meta name="theme-color" content="#061423">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
@@ -39,13 +33,18 @@
       "addressRegion": "VE",
       "addressCountry": "IT"
     },
+    "telephone": "+39 348 567 8123",
+    "email": "fc@immobiliagroup.it",
+    "vatID": "IT04865670279",
     "areaServed": "Venezia",
+    "sameAs": [
+      "https://www.immobiliare.it/agenzie-immobiliari/436795/immobilia-di-francesca-cavagnaro-venezia/",
+      "https://www.idealista.it/pro/immobilia-di-francesca-cavagnaro/",
+      "https://www.fiaipveneto.it/associati/francesca-cavagnaro-36085/"
+    ],
     "hasMap": "https://www.google.com/maps/search/?api=1&query=Campo+San+Tom%C3%A0+2916%2C+30125+Venezia"
   }
   </script>
-  <!-- [DA INSERIRE] quando avete i dati, aggiungete al blocco qui sopra:
-       "telephone": "+39 ...", "email": "...", "url": "https://...",
-       "openingHours": ["Mo-Fr 09:30-13:00", "Mo-Fr 15:00-19:00"] -->
 
   <style>
     :root {
@@ -142,6 +141,16 @@
     .chiaro .pulsante { color: var(--inchiostro); border-color: rgb(11 22 34 / 0.3); }
     .chiaro .pulsante:hover { border-color: var(--inchiostro); }
 
+    .fiaip { margin: 1.75rem 0 0; font-size: 0.85rem; letter-spacing: 0.04em; color: var(--peltro-300); }
+    .fiaip a { color: var(--argento); text-underline-offset: 3px; }
+    .appuntamento {
+      border-top: 1px solid var(--linea);
+      border-bottom: 1px solid var(--linea);
+      padding: 0.9rem 0;
+    }
+    .appuntamento p { margin: 0; }
+    .appuntamento p + p { margin-top: 0.75rem; color: var(--ardesia); }
+
     /* Sezioni chiare */
     section.chiaro { padding: clamp(3.5rem, 8vw, 6rem) 0; }
     section.chiaro + section.chiaro { border-top: 1px solid var(--linea); }
@@ -221,13 +230,11 @@
         Ogni casa seguita di persona, dalla prima visita al rogito.
       </p>
       <div class="azioni">
-        <!-- [DA INSERIRE] telefono nel formato tel:+39041... -->
-        <a class="pulsante pieno" href="tel:+39000000000"><span class="porta" aria-hidden="true"></span>Chiama</a>
-        <!-- [DA INSERIRE] numero WhatsApp, es. https://wa.me/393331234567 -->
-        <a class="pulsante" href="https://wa.me/390000000000">WhatsApp</a>
-        <!-- [DA INSERIRE] email -->
-        <a class="pulsante" href="mailto:info@esempio.it">Scrivi una email</a>
+        <a class="pulsante pieno" href="tel:+393485678123"><span class="porta" aria-hidden="true"></span>Chiama</a>
+        <a class="pulsante" href="https://wa.me/393485678123?text=Buongiorno%2C%20vi%20scrivo%20dal%20sito%20di%20IMMOBILIA" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="pulsante" href="mailto:fc@immobiliagroup.it">Scrivi una email</a>
       </div>
+      <p class="fiaip">Agente immobiliare associato <a href="https://www.fiaipveneto.it/associati/francesca-cavagnaro-36085/" target="_blank" rel="noopener">FIAIP</a></p>
     </div>
   </header>
 
@@ -242,15 +249,15 @@
             <dl class="elenco">
               <div>
                 <dt>Telefono</dt>
-                <dd><a href="tel:+39000000000">[DA INSERIRE: telefono]</a></dd>
+                <dd><a href="tel:+393485678123">348 567 8123</a></dd>
               </div>
               <div>
                 <dt>WhatsApp</dt>
-                <dd><a href="https://wa.me/390000000000">[DA INSERIRE: numero WhatsApp]</a></dd>
+                <dd><a href="https://wa.me/393485678123?text=Buongiorno%2C%20vi%20scrivo%20dal%20sito%20di%20IMMOBILIA" target="_blank" rel="noopener">348 567 8123</a></dd>
               </div>
               <div>
                 <dt>Email</dt>
-                <dd><a href="mailto:info@esempio.it">[DA INSERIRE: email]</a></dd>
+                <dd><a href="mailto:fc@immobiliagroup.it">fc@immobiliagroup.it</a></dd>
               </div>
               <div>
                 <dt>Ufficio</dt>
@@ -259,22 +266,11 @@
             </dl>
           </div>
           <div>
-            <h3 class="titolo-colonna">Orari dell’ufficio</h3>
-            <dl class="elenco">
-              <div>
-                <dt>Lun – Ven</dt>
-                <dd>[DA INSERIRE: orari]</dd>
-              </div>
-              <div>
-                <dt>Sabato</dt>
-                <dd>[DA INSERIRE: orari o “su appuntamento”]</dd>
-              </div>
-              <div>
-                <dt>Domenica</dt>
-                <dd>Chiuso</dd>
-              </div>
-            </dl>
-            <p class="nota">Fuori orario riceviamo su appuntamento: chiamateci o scriveteci su WhatsApp.</p>
+            <h3 class="titolo-colonna">Su appuntamento</h3>
+            <div class="appuntamento">
+              <p>Francesca è spesso in giro per le visite e l’ufficio non ha un orario fisso.</p>
+              <p>Prima di passare chiamate o scrivete su WhatsApp: fissiamo insieme il momento giusto, in ufficio o direttamente davanti alla casa.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -286,10 +282,8 @@
         <h2 id="annunci-titolo">Le nostre case in vendita e in affitto</h2>
         <p class="nota">Pubblichiamo tutti i nostri immobili sui principali portali, con foto, planimetrie e prezzi aggiornati.</p>
         <div class="portali">
-          <!-- [DA INSERIRE] link alla pagina dell'agenzia su Idealista -->
-          <a class="pulsante" href="https://www.idealista.it/" target="_blank" rel="noopener">Vedi su Idealista ↗</a>
-          <!-- [DA INSERIRE] link alla pagina dell'agenzia su Immobiliare.it -->
-          <a class="pulsante" href="https://www.immobiliare.it/" target="_blank" rel="noopener">Vedi su Immobiliare.it ↗</a>
+          <a class="pulsante" href="https://www.idealista.it/pro/immobilia-di-francesca-cavagnaro/" target="_blank" rel="noopener">Vedi su Idealista ↗</a>
+          <a class="pulsante" href="https://www.immobiliare.it/agenzie-immobiliari/436795/immobilia-di-francesca-cavagnaro-venezia/" target="_blank" rel="noopener">Vedi su Immobiliare.it ↗</a>
         </div>
       </div>
     </section>
@@ -337,8 +331,8 @@
 
   <footer class="scuro">
     <div class="wrap">
-      <p>© 2026 IMMOBILIA di Francesca Cavagnaro · Campo San Tomà 2916, 30125 Venezia</p>
-      <p>P.IVA [DA INSERIRE] · REA VE-[DA INSERIRE]</p>
+      <p>© 2026 IMMOBILIA di Francesca Cavagnaro · P.IVA 04865670279 · REA VE-458510</p>
+      <p>Sede legale: San Polo 2877, 30125 Venezia · Ufficio: Campo San Tomà 2916, 30125 Venezia</p>
       <p>Questo sito non usa cookie né strumenti di tracciamento. La mappa di Google si carica solo se la richiedete:
         in quel caso vale l’<a href="https://policies.google.com/privacy?hl=it" target="_blank" rel="noopener">informativa privacy di Google</a>.</p>
     </div>

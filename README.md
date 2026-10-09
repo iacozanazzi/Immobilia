@@ -1,6 +1,6 @@
 # IMMOBILIA di Francesca Cavagnaro
 
-Pagina unica dell'agenzia: logo, contatti, orari, link agli annunci e mappa della sede in Campo San Tomà.
+Pagina unica dell'agenzia: logo, contatti, link agli annunci e mappa dell'ufficio in Campo San Tomà.
 
 ## Aprirla
 
@@ -15,17 +15,12 @@ Doppio clic su `index.html`: si apre nel browser, non serve installare nulla.
 | `favicon.svg` | Icona della scheda del browser |
 | `docs/brand/logo-reference.jpg` | Il logo originale da cui è stata fatta la ricostruzione |
 
-## Completare i dati
+## Modificare i dati
 
-Aprite `index.html` con un editor di testo e cercate `[DA INSERIRE`:
-- telefono;
-- WhatsApp;
-- email;
-- orari;
-- link alle pagine dell'agenzia su Idealista e Immobiliare.it;
-- P.IVA e REA.
+Aprite `index.html` con un editor di testo.
 
-L'elenco completo è anche nel commento in cima al file.
+- **Telefono, email e link** compaiono più volte. Per cambiarli usate "Trova e sostituisci", senza dimenticare i dati per Google nel blocco `application/ld+json` in alto.
+- **Testi:** sono scritti direttamente nella pagina. Gli orari non sono indicati di proposito: si riceve su appuntamento.
 
 ## Privacy
 
